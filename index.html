@@ -44,7 +44,7 @@ $('surveyForm').addEventListener('submit',async e=>{
  try{const form=new FormData(e.currentTarget);const nombre=String(form.get('nombre')??'').trim();const genero=String(form.get('genero')??'');const cedula=String(form.get('cedula')??'').trim();
  if(!nombre||!cedula||!['Humano','Extraterrestre'].includes(genero)||!$('consent').checked)throw new Error('Completa los campos y acepta el aviso de privacidad.');
  const {error}=await db.from('respuestas').insert({nombre,genero,cedula});if(error)throw error;
- e.currentTarget.reset();message('status','¡Encuesta enviada y guardada correctamente!');
+ $('surveyForm').reset();message('status','¡Encuesta enviada y guardada correctamente!');
  }catch(err){message('status','No se pudo guardar: '+err.message,true)}finally{btn.disabled=false}
 });
 $('adminOpen').onclick=async()=>{const {data:{session}}=await db.auth.getSession();if(session){show('adminPanel');await render()}else show('loginPanel')};
