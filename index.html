@@ -31,7 +31,7 @@ input[type=text],input[type=password],input[type=email]{width:100%;padding:14px 
 <script type="module">
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 // REEMPLAZA SOLAMENTE ESTOS DOS VALORES. Nunca coloques aquí una secret/service_role key.
-const SUPABASE_URL = 'https://cobkuwgstafretirmhbh.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://cobkuwgstafretirmhbh.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_m_u9DmuKjeJVRkIWcWZWBg_51Wl4lCY';
 const db = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {auth:{persistSession:true,autoRefreshToken:true}});
 const $=id=>document.getElementById(id);
